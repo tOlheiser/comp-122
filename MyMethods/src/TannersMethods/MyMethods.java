@@ -17,16 +17,16 @@ public class MyMethods {
     /* Assignment 4 Methods */
     public static int[] getFinalGrades(int[] mid, int[] fin, int[] ass) {
         // Declare arrays
-        int[] finalGrade = new int[4];
-        double[] finGrade = new double[4];
+        int[] finalGrade = new int[mid.length];
+        double[] finGrade = new double[mid.length];
         
         // Multiply grade by % then round up, add all together & store in current index
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < mid.length; i++) {
             finGrade[i] = ( Math.round(ass[i] * .15) ) + ( Math.round(mid[i] * .40) ) + ( Math.round(fin[i] * .45) );
         }
         
         // cast double variables into ints then store into the finalGrade array.
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < mid.length; i++) {
             finalGrade[i] = (int)finGrade[i];
         }
         
