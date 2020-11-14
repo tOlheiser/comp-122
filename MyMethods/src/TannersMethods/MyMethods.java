@@ -15,6 +15,24 @@ import java.util.Arrays;
 public class MyMethods {
 
     /* Assignment 4 Methods */
+    public static int[] getFinalGrades(int[] mid, int[] fin, int[] ass) {
+        // Declare arrays
+        int[] finalGrade = new int[4];
+        double[] finGrade = new double[4];
+        
+        // Multiply grade by % then round up, add all together & store in current index
+        for (int i = 0; i < 4; i++) {
+            finGrade[i] = ( Math.round(ass[i] * .15) ) + ( Math.round(mid[i] * .40) ) + ( Math.round(fin[i] * .45) );
+        }
+        
+        // cast double variables into ints then store into the finalGrade array.
+        for (int i = 0; i < 4; i++) {
+            finalGrade[i] = (int)finGrade[i];
+        }
+        
+        return finalGrade;
+    }
+    
     public static double[] reverseSort(double[] oldArray) {
         int j = oldArray.length - 1; // reverse counter
         int i = 0; // regular counter
