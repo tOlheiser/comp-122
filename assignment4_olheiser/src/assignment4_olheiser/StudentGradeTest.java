@@ -57,13 +57,21 @@ public class StudentGradeTest {
         newFinalGrade = MyMethods.getFinalGrades(newMidScore, newFinScore, newAssignGrade);
         averageGrade = MyMethods.getAverage(newFinalGrade);
         
-        // Display data & average
+        // Determine the Highest & Lowest grade
+        int lowestGrade = MyMethods.getMinIndex(newFinalGrade);
+        int highestGrade = MyMethods.getMaxIndex(newFinalGrade);
+        
+        // Display data
         System.out.println("Name:\t\tMidterm:\tFinal:\t\tAssignment:\tFinal Grade:");
         for (int i = 0; i < newFinalGrade.length; i++) {
             System.out.printf("%s\t\t%d\t\t%d\t\t%d\t\t%d\n", newName[i], newMidScore[i], newFinScore[i], newAssignGrade[i], newFinalGrade[i]);
         }
         
+        // Display the average, lowest & highest grade, and number of students who passed
         System.out.printf("\nAverage Grade: %.1f", averageGrade);
+        System.out.printf("\n\nThe lowest grade is: %s", newName[lowestGrade]);
+        System.out.printf("\nThe highest grade is: %s", newName[highestGrade]);
+        System.out.printf("\nNumber of students who passed: %d\n", MyMethods.findFrequency(newFinalGrade, 60));
         
     }
 }
