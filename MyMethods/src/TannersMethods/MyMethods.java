@@ -15,6 +15,21 @@ import java.util.Arrays;
 public class MyMethods {
 
     /* Assignment 4 Methods */
+    public static int findFrequency(int[] array, int Value) {
+        // Declare counter
+        int counter = 0;
+        
+        // loop over array
+        for (int i = 0; i < array.length; i++) {
+            // if current index > pass value, increment counter
+            if (array[i] >= Value) counter++;
+        }
+        
+        return counter;
+    }
+    
+    
+    
     public static int[] getFinalGrades(int[] mid, int[] fin, int[] ass) {
         // Declare arrays
         int[] finalGrade = new int[mid.length];
@@ -183,7 +198,6 @@ public class MyMethods {
         return counter;
     }
     
-    
     public static int getMinValue(int[] array) {
         int minValue = 0;
         
@@ -198,6 +212,39 @@ public class MyMethods {
             }
         }
         return minValue;
+    }
+    
+    public static int getMaxIndex(int[] array) {
+        int maxValue = getMaxValue(array); // get the minimum value
+        int maxIndex = -1;
+        
+        // loop over the array
+        for (int i = 0; i < array.length; i++) {
+            // if minValue equals the current index, assign minIndex then break out of loop
+            if (maxValue == array[i]) {
+                maxIndex = i;
+                break;
+            }
+        }
+        
+        return maxIndex;
+    }
+    
+    
+    public static int getMaxValue(int[] array) {
+        int maxValue = 0;
+        
+        // loop over the array
+        for (int i = 0; i < array.length; i++) {
+            // on first iteration
+            if (i == 0) {
+                maxValue = array[i];
+            // assign minValue of current index is less than current minValue
+            } else if (array[i] > maxValue) {
+                maxValue = array[i];
+            }
+        }
+        return maxValue;
     }
     
     public static int getMinIndex(int[] array) {
