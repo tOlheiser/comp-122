@@ -5,6 +5,8 @@
  */
 package assignment4_olheiser;
 
+import TannersMethods.MyMethods;
+
 /**
  *
  * @author Owner
@@ -16,10 +18,11 @@ public class StudentGradeTest {
         int[] finalScore = {58, 75, 96, 79};
         int[] assignmentGrade = {33, 80, 90, 83};
         int[] finalGrade = new int[4];
+        finalGrade = MyMethods.getFinalGrades(midtermScore, finalScore, assignmentGrade);
         
-        System.out.println("Name:\t\tMidterm:\tFinal:\t\tAssignment:");
+        System.out.println("Name:\t\tMidterm:\tFinal:\t\tAssignment:\tFinal Grade:");
         for (int i = 0; i < 4; i++) {
-            System.out.printf("%s\t\t%d\t\t%d\t\t%d\n", name[i], midtermScore[i], finalScore[i], assignmentGrade[i]);
+            System.out.printf("%s\t\t%d\t\t%d\t\t%d\t\t%d\n", name[i], midtermScore[i], finalScore[i], assignmentGrade[i], finalGrade[i]);
         }
         
     }
