@@ -11,20 +11,27 @@ import TannersMethods.MyMethods;
  */
 public class StockPriceTest {
     public static void main(String[] args) {
-        
+        // Declare arrays
         double[] closingPrice = {25.0, 38.25, 39.50, 38.75, 37.33, 37.22, 29.56, 31.05, 30.77, 38.25};
-        double[] priceSummary = {MyMethods.getMaxValue(closingPrice), MyMethods.getMinValue(closingPrice), MyMethods.getAverage(closingPrice)};
-
-        System.out.printf("Highest Price: %f", priceSummary[0]);
-        System.out.printf("Lowest Price: %f", priceSummary[1]);
-        System.out.printf("Average Price: %f", priceSummary[2]);
+        double[] priceSummary = {
+            MyMethods.getMaxValue(closingPrice), 
+            MyMethods.getMinValue(closingPrice), 
+            MyMethods.getAverage(closingPrice)
+        };
         
-        // A) Get the highest value in the array
-        // B) Get the smallest value in the array
-        // C) Get the average of the values in the array
-        /* D) Write a method that calcluates # of values below the average. 
-        The value is returns is the # of days */
-        // E) Iterate over each element, returning "Day i: array[i]\n"
-        // 
+        // reverse sort the closingPrice array from highest to lowest
+        closingPrice = MyMethods.reverseSort(closingPrice); 
+
+        // Display the price sumary
+        System.out.println("Price Summary:");
+        System.out.printf("Highest Price: %.2f\n", priceSummary[0]);
+        System.out.printf("Lowest Price: %.2f\n", priceSummary[1]);
+        System.out.printf("Average Price: %.2f\n", priceSummary[2]);
+        
+        // Loop through and display the prices
+        System.out.println("\nClosing Prices:");
+        for (int i = 0; i < closingPrice.length; i++) {
+            System.out.println(closingPrice[i]);
+        }
     }
 }
