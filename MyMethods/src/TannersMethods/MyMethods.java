@@ -7,6 +7,7 @@ package TannersMethods;
 import java.math.*;
 import java.util.Scanner;
 import java.util.Random;
+import java.util.Arrays; 
 /**
  *
  * @author Owner
@@ -14,6 +15,26 @@ import java.util.Random;
 public class MyMethods {
 
     /* Assignment 4 Methods */
+    public static double[] reverseSort(double[] oldArray) {
+        int j = oldArray.length - 1; // reverse counter
+        int i = 0; // regular counter
+        // Decare reversed array with same length as array passed in
+        double[] reversedArray = new double[oldArray.length];
+        Arrays.sort(oldArray); // use library to sort in ascending order
+        
+        //
+        while (j >= 0) {
+            /* Since oldArray[] has the highest values at the end, we assign the
+            first index from end of oldArray[] and increment/decrement according.*/
+            reversedArray[i] = oldArray[j];
+            // increment & decrement counters
+            j--; 
+            i++;
+        }
+        
+        return reversedArray;
+    }
+    
     public static double getMaxValue(double[] stockPrices) {
         // declare a value to store maxValue in.
         double maxValue = 0;
