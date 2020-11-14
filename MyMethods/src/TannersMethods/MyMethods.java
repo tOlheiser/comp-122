@@ -33,18 +33,18 @@ public class MyMethods {
         return finalGrade;
     }
     
-    public static double[] reverseSort(double[] oldArray) {
-        int j = oldArray.length - 1; // reverse counter
+    public static double[] reverseSort(double[] arr) {
+        int j = arr.length - 1; // reverse counter
         int i = 0; // regular counter
         // Decare reversed array with same length as array passed in
-        double[] reversedArray = new double[oldArray.length];
-        Arrays.sort(oldArray); // use library to sort in ascending order
+        double[] reversedArray = new double[arr.length];
+        Arrays.sort(arr); // use library to sort in ascending order
         
         //
         while (j >= 0) {
             /* Since oldArray[] has the highest values at the end, we assign the
             first index from end of oldArray[] and increment/decrement according.*/
-            reversedArray[i] = oldArray[j];
+            reversedArray[i] = arr[j];
             // increment & decrement counters
             j--; 
             i++;
@@ -53,35 +53,35 @@ public class MyMethods {
         return reversedArray;
     }
     
-    public static double getMaxValue(double[] stockPrices) {
+    public static double getMaxValue(double[] arr) {
         // declare a value to store maxValue in.
         double maxValue = 0;
         
-        for (int i = 0; i < stockPrices.length; i++) {
+        for (int i = 0; i < arr.length; i++) {
             // On the first iteration, set first array element as highest value.
             if (i == 0) {
-                maxValue = stockPrices[i];
+                maxValue = arr[i];
                 // check if stockPrices[i] is higher than current highestValue.
-            } else if (stockPrices[i] > maxValue) {
+            } else if (arr[i] > maxValue) {
                 // assign stockPrices[i] as highest value
-                maxValue = stockPrices[i];
+                maxValue = arr[i];
             }  
         }
         return maxValue;
     }
     
-    public static double getMinValue(double[] stockPrices) {
+    public static double getMinValue(double[] arr) {
         // declare a value to store minValue in.
         double minValue = 0;
         
-        for (int i = 0; i < stockPrices.length; i++) {
+        for (int i = 0; i < arr.length; i++) {
             // On the first iteration, set first array element as minValue.
             if (i == 0) {
-                minValue = stockPrices[i];
+                minValue = arr[i];
                 // check if stockPrices[i] is lower than current minValue.
-            } else if (stockPrices[i] < minValue) {
+            } else if (arr[i] < minValue) {
                 // assign stockPrices[i] as minValue
-                minValue = stockPrices[i];
+                minValue = arr[i];
             }  
         }
         return minValue;
