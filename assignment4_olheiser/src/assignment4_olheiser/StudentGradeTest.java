@@ -33,7 +33,7 @@ public class StudentGradeTest {
         System.out.printf("\nAverage Grade: %.1f\n\n", averageGrade);
         
         
-        // New Students Added
+        // Create arrays to accommodate new students added
         String[] newName = new String[6];
         int[] newMidScore = new int[6];
         int[] newFinScore = new int[6];
