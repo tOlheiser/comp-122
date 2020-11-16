@@ -114,7 +114,7 @@ public class MyMethods {
         return sum / numberArray.length;
     }
     
-    public static int daysBelowAverage(double[] stockPrices, double average) {
+    public static int getDaysBelowAverage(double[] stockPrices, double average) {
         int daysBelowAverage = 0;
         
         // for each loop - stockPrice of stockPrices
