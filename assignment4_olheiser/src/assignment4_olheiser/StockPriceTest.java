@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package assignment4_olheiser;
-import TannersMethods.MyMethods;
 /**
  *
  * @author Owner
@@ -17,16 +16,16 @@ public class StockPriceTest {
         // Declare arrays
         double[] closingPrice = {25.0, 38.25, 39.50, 38.75, 37.33, 37.22, 29.56, 31.05, 30.77, 38.25};
         double[] priceSummary = {
-            MyMethods.getMaxValue(closingPrice), 
-            MyMethods.getMinValue(closingPrice), 
-            MyMethods.getAverage(closingPrice)
+            Methods.getMaxValue(closingPrice), 
+            Methods.getMinValue(closingPrice), 
+            Methods.getAverage(closingPrice)
         };
         
         // reverse sort the closingPrice array from highest to lowest
-        closingPrice = MyMethods.reverseSort(closingPrice); 
+        closingPrice = Methods.reverseSort(closingPrice); 
 
         // determine the days below average and store in a variable
-        daysBelowAverage = MyMethods.getDaysBelowAverage(closingPrice, priceSummary[2]);
+        daysBelowAverage = Methods.getDaysBelowAverage(closingPrice, priceSummary[2]);
         
         // Display the price sumary
         System.out.println("Price Summary:");

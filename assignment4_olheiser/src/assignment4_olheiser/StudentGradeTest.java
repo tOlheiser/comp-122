@@ -5,8 +5,6 @@
  */
 package assignment4_olheiser;
 
-import TannersMethods.MyMethods;
-
 /**
  *
  * @author Owner
@@ -21,8 +19,8 @@ public class StudentGradeTest {
         int[] finalGrade = new int[4];
         
         // Calculate final grade & average
-        finalGrade = MyMethods.getFinalGrades(midtermScore, finalScore, assignmentGrade);
-        double averageGrade = MyMethods.getAverage(finalGrade);
+        finalGrade = Methods.getFinalGrades(midtermScore, finalScore, assignmentGrade);
+        double averageGrade = Methods.getAverage(finalGrade);
         
         // Display data & average
         System.out.println("Name:\t\tMidterm:\tFinal:\t\tAssignment:\tFinal Grade:");
@@ -54,12 +52,12 @@ public class StudentGradeTest {
         newAssignGrade[4] = 91; newAssignGrade[5] = 78;
         
         // Recalculate final grades & average as new students have been added
-        newFinalGrade = MyMethods.getFinalGrades(newMidScore, newFinScore, newAssignGrade);
-        averageGrade = MyMethods.getAverage(newFinalGrade);
+        newFinalGrade = Methods.getFinalGrades(newMidScore, newFinScore, newAssignGrade);
+        averageGrade = Methods.getAverage(newFinalGrade);
         
         // Determine the Highest & Lowest grade
-        int lowestGrade = MyMethods.getMinIndex(newFinalGrade);
-        int highestGrade = MyMethods.getMaxIndex(newFinalGrade);
+        int lowestGrade = Methods.getMinIndex(newFinalGrade);
+        int highestGrade = Methods.getMaxIndex(newFinalGrade);
         
         // Display data
         System.out.println("Name:\t\tMidterm:\tFinal:\t\tAssignment:\tFinal Grade:");
@@ -71,7 +69,7 @@ public class StudentGradeTest {
         System.out.printf("\nAverage Grade: %.1f", averageGrade);
         System.out.printf("\n\nThe lowest grade is: %s", newName[lowestGrade]);
         System.out.printf("\nThe highest grade is: %s", newName[highestGrade]);
-        System.out.printf("\nNumber of students who passed: %d\n", MyMethods.findFrequency(newFinalGrade, 60));
+        System.out.printf("\nNumber of students who passed: %d\n", Methods.findFrequency(newFinalGrade, 60));
         
     }
 }
