@@ -47,14 +47,32 @@ public class Methods {
     public static double[] reverseSort(double[] arr) {
         int j = arr.length - 1; // reverse counter
         int i = 0; // regular counter
+        double tempDbl = 0;
+        
         // Decare reversed array with same length as array passed in
         double[] reversedArray = new double[arr.length];
-        Arrays.sort(arr); // use library to sort in ascending order
         
-        //
+        //Arrays.sort(arr); // use library to sort in ascending order
+        
+        // Sort the array in ascending order
+        for (int y = 0; y < arr.length; y++) { // iterate over the array
+            /* start the nested loop from the current iteration of y, then iterate over the array
+            incrementing z and comparing it to the current iteration of y. */
+            for (int z = y; z < arr.length; z++) {
+                // If y is greater than z, swap the values.
+                if (arr[y] > arr[z]) {
+                    // Need to store arr[y] in temp value before assigning arr[z] to it
+                    tempDbl = arr[y]; 
+                    arr[y] = arr[z];
+                    arr[z] = tempDbl;
+                }
+            }
+        }
+        
+        // Reverse the array
         while (j >= 0) {
-            /* Since oldArray[] has the highest values at the end, we assign the
-            first index from end of oldArray[] and increment/decrement according.*/
+            /* Since the old array has the highest values at the end, we assign the
+            first index from end of the old array and increment/decrement according.*/
             reversedArray[i] = arr[j];
             // increment & decrement counters
             j--; 
