@@ -11,9 +11,9 @@ package assignment5_olheiser;
  */
 public class Account {
     // initialize instance variables
-    private static int numberOfAccounts;
+    private static int numberOfAccounts = 0; // counter for # of instances
     private int id;
-    private double balance;
+    private double balance = 0.00;
     private double annualInterestRate;
     
     // Default constructor
@@ -24,8 +24,12 @@ public class Account {
         /* this refers to the instance variables of the class
         assigning the values passed into the constructor to the corresponding
         instance variables in the new instance of the object */
-        this.balance = balance;
-        this.annualInterestRate = annualInterestRate;
+        numberOfAccounts++; // increment counter
+        // Use the setter methods to assign values of the instance variables
+        setId( getNumberOfAccounts() );
+        setBalance(balance); 
+        setAnnualInterestRate(annualInterestRate);
+        
     }
     
     // Declaring the Getter methods
@@ -43,15 +47,15 @@ public class Account {
     
     // Declare the Setter methods
     public void setId(int id) {
-        
+        this.id = id;
     }
     
     public void setBalance(double balance) {
-        
+        this.balance = balance;
     }
     
     public void setAnnualInterestRate(double annualInterestRate) {
-        
+        this.annualInterestRate = annualInterestRate;
     }
     
     // Declare class methods
@@ -60,19 +64,34 @@ public class Account {
     }
     
     public void withdraw(double amount) {
-        
+        if (amount >= 0 && amount <= getBalance()) {
+            balance -= amount;
+        }
     }
     
     public void deposit(double amount) {
-        
+        if (amount >= 0) {
+            balance += amount;
+        }
     }
     
     public static int getNumberOfAccounts() {
-        return 0;
+        return numberOfAccounts;
+        
     }
     
     public void transfer(double amount, Account otherAccount) {
+        // must check if he has sufficient funds to transfer
+        // ---> do the check at the time the transfer() is invoked
+        // ---> Display appropriate message if check fails
+        if (amount < 0 && amount > getBalance()) {
+            return;
+        }
+        withdraw(amount);
+        otherAccount.deposit(amount);
         
+        
+        // NEED TO WITHDRAW
     }
     
 } // end of class declaration
