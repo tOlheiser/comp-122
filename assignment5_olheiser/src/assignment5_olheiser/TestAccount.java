@@ -15,22 +15,22 @@ public class TestAccount {
         System.out.printf("Number of accounts created: %d", Account.getNumberOfAccounts());
         
         // Create instances of the Account object
-        Account BeavisAccount = new Account(45167, 4.2);
-        Account ButtheadAccount = new Account(23.20, 12.9);
+        Account FrankAccount = new Account(45167, 4.2);
+        Account MarvinAccount = new Account(23.20, 12.9);
         
         // Balance before transfer:
         System.out.println("\n\nBalance after transfer:");
-        System.out.printf("Beavis: %.2f\n", BeavisAccount.getBalance());
-        System.out.printf("Butthead: %.2f\n", ButtheadAccount.getBalance());
+        System.out.printf("Beavis: %.2f\n", FrankAccount.getBalance());
+        System.out.printf("Butthead: %.2f\n", MarvinAccount.getBalance());
         
         // Transfer:
-        BeavisAccount.transfer(5167, ButtheadAccount);
+        FrankAccount.transfer(5167, MarvinAccount);
         System.out.println("\nTransfer sent.");
         
         // Balance after transfer:
         System.out.println("\nBalance after transfer:");
-        System.out.printf("Beavis: %.2f\n", BeavisAccount.getBalance());
-        System.out.printf("Butthead: %.2f\n", ButtheadAccount.getBalance());
+        System.out.printf("Beavis: %.2f\n", FrankAccount.getBalance());
+        System.out.printf("Butthead: %.2f\n", MarvinAccount.getBalance());
         
         // Display the number of accounts created ~end of program~
         System.out.printf("\nNumber of accounts created: %d\n", Account.getNumberOfAccounts());
