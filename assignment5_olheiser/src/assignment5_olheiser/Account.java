@@ -60,16 +60,18 @@ public class Account {
     
     // Declare class methods
     public double getMonthlyInterestRate() {
-        return 0;
+        return annualInterestRate / 12;
     }
     
     public void withdraw(double amount) {
+        // if it's a valid amount, subtract it from balance
         if (amount >= 0 && amount <= getBalance()) {
             balance -= amount;
         }
     }
     
     public void deposit(double amount) {
+        // increase the balance if the amount is greater than 0
         if (amount >= 0) {
             balance += amount;
         }
@@ -81,17 +83,13 @@ public class Account {
     }
     
     public void transfer(double amount, Account otherAccount) {
-        // must check if he has sufficient funds to transfer
-        // ---> do the check at the time the transfer() is invoked
-        // ---> Display appropriate message if check fails
+        // break out if the amount is < 0 or  it's greater than the balance.
         if (amount < 0 && amount > getBalance()) {
             return;
         }
+        // decrease funds then deposit
         withdraw(amount);
         otherAccount.deposit(amount);
-        
-        
-        // NEED TO WITHDRAW
     }
     
 } // end of class declaration
