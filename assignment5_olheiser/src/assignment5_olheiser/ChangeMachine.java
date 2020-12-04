@@ -36,10 +36,26 @@ public class ChangeMachine {
     
     // Declare Setter Methods
     public void setLoonies(int loonies) {
+        if (loonies < 0) {
+            System.out.println("You cannot have a negative number of coins!");
+        } else {
+            this.loonies += loonies;
+        }
+        
+        checkStatus();
+        
         this.loonies = loonies;
     }
     
     public void setToonies(int toonies) {
+        if (toonies < 0) {
+            System.out.println("You cannot have a negative number of coins!");
+        } else {
+            this.toonies += toonies;
+        }
+        
+        checkStatus();
+        
         this.toonies = toonies;
     }
     
@@ -53,7 +69,11 @@ public class ChangeMachine {
     }
     
     public void checkStatus() {
-        
+        if (getToonies() < 10 || getLoonies() < 1) {
+            setStatus(true);
+        } else {
+            setStatus(false);
+        }
     }
     
     private void makeChange(int amount) {
